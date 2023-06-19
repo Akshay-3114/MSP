@@ -209,6 +209,16 @@ def share_album_detail(request, album_id):
         user = request.user
         album = get_object_or_404(Album, pk=album_id)
         return render(request, '../templates/music/shared_album_detail.html', {'album': album, 'user': user})
+    
+def received_album_detail(request, album_id):
+    if not request.user.is_authenticated:
+        return render(request, '../templates/users/login.html')
+    else:
+        user = request.user
+        recieved_album= Shared_album.objects.filter(id = album_id)
+        album_id = recieved_album[0].album_title.id
+        album = get_object_or_404(Album, pk=album_id)
+        return render(request, '../templates/music/shared_album_detail.html', {'album': album, 'user': user})
 
 
 def share(request,album_id,username):
@@ -220,7 +230,6 @@ def share(request,album_id,username):
 
 def unshare(request,album_id,username):
     album = Shared_album.objects.filter(receiver__username=username,album_title=get_object_or_404(Album,pk=album_id))
-    print(album_id)
     for u in album:
         print(u.album_title)
     album.delete()

@@ -32,6 +32,7 @@ urlpatterns = [
     path('(<album_id>[0-9]+)/delete_album/', views.delete_album, name='delete_album'),
     path('(<album_id>[0-9]+)/share_album/', views.share_album, name='share_album'),
     path('(<album_id>[0-9]+)', views.share_album_detail, name='share_album_detail'),
+    path('(<album_id>[0-9]+)share/', views.received_album_detail, name='received_album_detail'),
     path('share/(<album_id>[0-9]+)/(<username>[\w\-]+)/', views.share, name="share"),
     path('unshare/(<album_id>[0-9]+)/(<username>[\w\-]+)/', views.unshare, name="unshare"),
 ]
