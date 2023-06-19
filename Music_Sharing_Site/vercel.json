@@ -1,0 +1,13 @@
+{
+    "builds" : [{
+        "src" : "Music_Sharing_Site2/wsgi.py",
+        "use" : "@vercel/python",
+        "config" : { "maxLanbdaSize" : "15mb", "runtime" : "python3.9"}
+    }],
+    "routes" : [
+        {
+            "src" : "/(.*)",
+            "dest" : "Music_Sharing_Site2/wsgi.py"
+        }
+    ]
+}
