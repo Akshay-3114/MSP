@@ -73,7 +73,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Music_Sharing_Site2.wsgi.application'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static','staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
