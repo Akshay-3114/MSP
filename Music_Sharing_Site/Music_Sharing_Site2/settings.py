@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import django_heroku
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,9 +25,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '(1rx(%c2^0a(doe0^6c6*f4vzc$3l(2r5der05fowrdes@y#wc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -137,3 +139,5 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 #LOGIN_REDIRECT_URL = 'blog-home'
 #LOGIN_URL = 'users.urls.login_user'
+
+django_heroku.settings(locals())
