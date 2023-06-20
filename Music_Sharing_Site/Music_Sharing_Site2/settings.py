@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import django_heroku
-import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,7 +25,7 @@ SECRET_KEY = '(1rx(%c2^0a(doe0^6c6*f4vzc$3l(2r5der05fowrdes@y#wc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
@@ -52,7 +50,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'Music_Sharing_Site2.urls'
@@ -76,7 +73,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Music_Sharing_Site2.wsgi.application'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static','staticfiles')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
@@ -140,4 +137,3 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 #LOGIN_REDIRECT_URL = 'blog-home'
 #LOGIN_URL = 'users.urls.login_user'
 
-django_heroku.settings(locals())

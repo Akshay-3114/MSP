@@ -9,6 +9,5 @@
             "src" : "/(.*)",
             "dest" : "Music_Sharing_Site2/wsgi.py"
         }
-    ],
-    "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+    ]
 }
