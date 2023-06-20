@@ -1,3 +1,5 @@
+// To handle fav button clicks
+
 var AlbumsListPage = {
     init: function () {
         this.$container = $('.albums-container');

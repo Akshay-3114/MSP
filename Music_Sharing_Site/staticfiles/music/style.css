@@ -1,13 +1,13 @@
 body {
     
-    background: url("images/background.jpg");
+    background: url("images/bgmusic.jpg");
     height: 100%;
     /*background: none;*/
 
     /* Center and scale the image nicely */
     background-repeat: no-repeat;
-    background-position: center;
     background-size: cover;
+
 } 
 
 html {
@@ -81,5 +81,5 @@ ul.errorlist > li {
 /*}*/
 
 .header-blue{
-    background-color: #08192d;
+    background-color: #d26e72;
 }
